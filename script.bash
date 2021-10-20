@@ -158,4 +158,13 @@ task17(){
     echo 404 > index.html
     curl http://localhost/index.html
 }
-task17
+
+task18(){
+    echo $(curl -s https://ip.cracx.me)
+}
+
+task19(){
+    task3
+    echo $(netstat -tulnp | grep tcp)
+}
+task18
