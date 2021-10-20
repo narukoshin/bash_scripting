@@ -137,4 +137,25 @@ task16(){
         sleep 1
     done
 }
-task16
+
+task17(){
+    # run system update
+    # install and run apache2
+    # echo 404 > index.html
+    # curl localhost/index.html
+    # Checking if the user is a root
+    task3
+    # After we know that the user is root, we can execute commands
+    echo "[+] Syncing the database, please wait..."
+    apt update &> /dev/null
+    echo "[+] Sync complete"
+    echo "[+] Installing apache2 server, please wait..."
+    apt install -y apache2 &> /dev/null
+    echo "[+] Apache2 installation complete, launching apache2 server..."
+    systemctl start apache2 &> /dev/null
+    echo "[+] Apache2 server started"
+    echo "[+] Rewriting the content of index.html file"
+    echo 404 > index.html
+    curl http://localhost/index.html
+}
+task17
