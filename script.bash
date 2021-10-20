@@ -129,4 +129,12 @@ task15(){
         echo $printText
     done
 }
-task15
+
+word=$1
+task16(){
+    for letter in $(seq 1 ${#word}); do
+        echo "${word:letter-1:1}"
+        sleep 1
+    done
+}
+task16
