@@ -160,6 +160,7 @@ task17(){
 }
 
 task18(){
+    # Later maybe I will create on my domain but for now, I did the task.
     echo $(curl -s https://ip.cracx.me)
 }
 
